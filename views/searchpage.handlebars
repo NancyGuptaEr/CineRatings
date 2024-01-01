@@ -1,0 +1,27 @@
+
+<main>
+<header>
+ 
+    {{!-- <p id="errors"></p>    --}}
+    </header>
+    <div>{{error}}</div>
+
+     <section class="explore-section">
+        <h2>Explore what's streaming</h2>
+        <div class="search-movies" id="searchResults">
+        {{#each movies}}
+        <div class="movie">
+            <a href="/movies/{{MovieId}}">
+            <img src="{{this.Thumbnail}}" alt="{{this.Title}}">            
+            <p>{{this.Title}}</p>
+            </a>
+            <p>Genre: {{this.Genre}}</p>
+            <p>Rating: {{this.Rating}}</p>
+            <p>MPA: {{this.MPA}}</p>
+            
+        </div>
+        {{/each}}
+        </div>
+        </section>
+
+    </main>

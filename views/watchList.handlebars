@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/movie_listing.css">
+<main>
+    <div class="create-watchlist-form">
+    <form class="creating watchlist" id="watchlist-form" method="POST">
+        <div class="form-group">
+            <label for="watchlistName">Watchlist Name:</label>
+            <input type="text" class="form-control" id="watchlistName" name="watchlistName" required>
+        </div>
+        <button type="submit" class="create-watchlist">Create Watchlist</button>
+    </form>
+    <p id="create-watchlist-error">
+
+    </p>
+</div>
+    <div class="watchlist-section section">
+        <h2 class="section-title">Your Watchlists:
+        </h2>
+        {{#each UserWatchListMovies}}
+        <div class="genre-section section">
+            <h2 class="section-title">{{@key}}</h2> 
+            <div class="remove-watchlist">
+                    <span>Remove Watchlist</span>
+                    <button class="remove-watchlist" data-watchlist-name="{{@key}}" data-user-id="{{../userId}}" onclick="removeWatchlist(this)">
+                        Remove {{@key}}
+                    </button>
+                    {{!-- <p>userId: {{../userId}}</p>
+                    <p>watchListName: {{@key}}</p>   --}}
+                </div>
+            <div class="d-flex flex-row movie-list">
+                
+                {{#each this}}
+                <div class="movie">    
+                    <a href="/movies/{{_id}}">      
+                    <img src="{{thumbnail}}" alt="{{title}}" class="img-fluid">
+                    <p>Title: {{title}}</p>
+                    <p>Rating: {{overall_rating}}</p>
+                    <p>MPA: {{contentRating}}</p>
+                    </a>
+                    <div class="remove-movie-from-watchlist">
+                    <span>Remove from watchlist</span>
+                    <button class="remove-movie" data-watchlist-name="{{watchListName}}" data-movie-id="{{_id}}" data-user-id="{{../../userId}}" onclick="removeMovieWatchlist(this)">
+                        Remove 
+                    </button>
+                    {{!-- <p>userId: {{../../userId}}</p>
+                    <p>watchListName: {{watchListName}}</p> --}}
+                </div>
+                </div>
+                {{/each}}
+                
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <a href="/home">
+    <h2>My Movie Page</h2>
+    </a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../public/js/watchListValidation.js"></script>
+</main>

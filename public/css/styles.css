@@ -1,0 +1,208 @@
+/* You will create a CSS stylesheet in /public/css/styles.css; this file should have at least 5 rulesets.  You will need to utilize all 5 rulesets on each of the pages (not every page has to use all 5 rulesets each but all 5 rulesets must be utilized by the various pages in your application).  So you can have some rulesets for one page, some for another page but there needs to be at least 5 total rulesets that are used between all the pages.  */
+
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs__crumb {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs__crumb:not(:last-child):after {
+    content: ' › ';
+    margin: 0 8px;
+}
+
+.a-link-normal {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.a-color-state {
+    color: #555;
+}
+
+.error-container {
+    border: 1px solid red;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    background-color: #ffcccc;
+}
+
+.error-container h1 {
+    color: red;
+}
+
+
+
+.navbar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; 
+}
+
+img.logo {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px; 
+}
+img.icon  {
+  height: 50px; 
+  width: 30px;
+  margin-right: 20px;
+}
+
+.img-height{
+  height: 130px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; 
+}
+
+.search-bar form {
+  display: flex;
+}
+
+.search-bar input[type="text"] {
+  padding: 5px;
+  width: 1150px;
+  margin-right: 5px;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+
+.review-form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-right: 20px
+}
+
+.review-form label, .review-form input[type="email"], .review-form input[type="number"], .review-form textarea, .review-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box; 
+}
+
+.review-form input[type="email"], .review-form input[type="number"], .review-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.review-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #0056b3;
+}
+
+.review-content {
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: max-height 0.3s ease;
+}
+
+.review-content:hover {
+    max-height: none;
+    white-space: normal;
+}
+
+.search-movies {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px; 
+}
+
+.movie {
+    flex: 0 0 auto;
+    width: 200px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 15px;
+}
+
+.movie:last-child {
+    margin-right: 0;
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.movie p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .movie p {
+        font-size: smaller;
+    }
+}
+
+.movie p {
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.search-movies::-webkit-scrollbar {
+    height: 6px; 
+}
+
+.container {
+    width: 90%;
+    max-width: none; 
+    margin: 0 auto; 
+}
+
+.section {
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+

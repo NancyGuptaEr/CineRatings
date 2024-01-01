@@ -1,0 +1,4 @@
+package-lock.json
+node_modules
+seedGenerator.py
+.vscode/launch.json

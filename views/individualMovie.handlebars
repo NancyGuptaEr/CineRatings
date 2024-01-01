@@ -1,0 +1,100 @@
+
+<main>
+<header>
+    {{!-- <p id="errors"></p>   --}}
+    <h2>{{title}}</h2>
+    </header>
+   <section>
+        <img class="thumbnail" src="{{thumbnail}}" alt="{{title}}">
+        <p><strong>Genre: </strong>{{genre}}</p>
+        <p><strong>Release Date: </strong>{{releaseDate}}</p> 
+        {{#if actors}}
+        <p><strong>Actors: </strong>
+            {{#each actors}}
+            {{this}}{{#unless @last}}, {{/unless}}
+            {{/each}}
+        </p>
+        {{/if}}
+
+        {{#if director}}
+        <p><strong>Director: </strong>
+            {{#each director}}
+            {{this}}{{#unless @last}}, {{/unless}}
+            {{/each}}
+        </p>
+        {{/if}}
+
+        {{#if producer}}
+        <p><strong>Producer: </strong>
+            {{#each producer}}
+            {{this}}{{#unless @last}}, {{/unless}}
+            {{/each}}
+        </p>
+        {{/if}}
+
+        {{#if writer}}
+        <p><strong>Writer: </strong>
+            {{#each writer}}
+            {{this}}{{#unless @last}}, {{/unless}}
+            {{/each}}
+        </p>
+        {{/if}}
+        <p><strong>MPA: </strong>{{mpa}}</p>
+        <p><strong>Rating: </strong>{{overall_rating}}</p>
+
+    {{#if reviews}}
+     <h3>Reviews</h3>
+     
+     <ol>
+        {{#each reviews}}
+        <li>
+        <div>
+            <p><strong>User: </strong>{{this.userId}}</p>
+            <p><strong>Rating: </strong>{{this.rating}}</p>
+
+            <p class="review-content"><strong>Review: </strong>{{this.review}}</p>
+            <p><strong>Date: </strong>{{this.ts}}</p>
+            {{#if ../isLoggedIn}}
+                <button class="flagReview"  data-movieID="{{../_id}}" data-review-emailId="{{this.userId}}" onclick="flagReview(this)">Flag Review</button>
+            {{/if}}
+            
+        </div>
+        {{#if this.showEditReviewSection}}
+            <button data-id="{{_id}}" data-review="{{this.review}}" data-rating="{{this.rating}}" type="button" class="editReview" onclick="scrollToBottom()">Edit</button>
+        {{/if}}
+        
+        {{#if this.showEditReviewSection}}
+        <button class="deleteReview"  data-movieID="{{../_id}}" onclick="deleteReview(this)" >Delete</button>
+        {{/if}}
+        </li>
+        {{/each}}
+        </ol>
+        {{else}}
+     <h3>No Reviews</h3>
+     {{/if}}
+
+        
+    </section>
+    {{#if isLoggedIn}}
+    <h3>Add Review</h3>
+    <form method="post" id="reviewForm" class="review-form">
+        <div>  
+        <div class="review-text">
+        <label for="userId">UserID: </label>
+        <input type="email" name="userID" id="userId" placeholder="{{emailAddress}}" value="{{emailAddress}}" readonly>
+        {{!-- <p>emailAddress: {{emailAddress}}</p  > --}}
+        <input type="hidden" name="movieId" id="movieId" value="{{_id}}">
+        <label for="rating">Rating (1-5): </label>
+        <input type="number" name="rating" id="rating" placeholder="Rating (1-5)" min="1" max="5" value="{{CurrentUserRating}}">
+        <label for="userReview">Your Review: </label>
+        <textarea id="userReview" name="review" placeholder="your review">{{CurrentUserReview}}</textarea>
+        <button type="submit" id="submitreview">Submit Review</button>
+        </div>
+        {{!-- <p id="errors"></p>  --}}
+        </div>
+        </form>
+   {{/if}}
+    <div id="bottom"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/public/js/review_form.js"></script>
+    </main>

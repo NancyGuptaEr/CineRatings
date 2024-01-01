@@ -1,0 +1,23 @@
+{
+  "name": "movie_rating_system",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "seed": "node seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Group 21: Nancy Gupta | Jinghao Huang | Yash Gandhi | Vivek Singh",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "mongodb": "^6.3.0",
+    "multer": "^1.4.5-lts.1",
+    "xss": "^1.0.14"
+  }
+}

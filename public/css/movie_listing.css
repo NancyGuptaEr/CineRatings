@@ -1,0 +1,93 @@
+/* Base styles for all sections */
+.section {
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific section styles */
+.genre-section {
+    background-color: #f0f0f0;
+}
+
+.recommended-section {
+    background-color: #e9ecef;
+}
+
+.watchlist-section {
+    background-color: #dee2e6;
+}
+
+.top10-section {
+    background-color: #ced4da;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px; 
+}
+
+
+.movie {
+    flex: 0 0 auto;
+    width: 200px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 15px;
+}
+
+.movie:last-child {
+    margin-right: 0;
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.movie p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 4px 0;
+}
+
+
+@media (max-width: 768px) {
+    .movie p {
+        font-size: smaller;
+    }
+}
+
+
+.movie p {
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+.movie-list::-webkit-scrollbar {
+    height: 6px; 
+}
+.container {
+    width: 90%;
+    max-width: none; 
+    margin: 0 auto; 
+}
+
+.auth-buttons {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 10px; /* Adjust as needed */
+  }
+  
+  /* Style for the watchlist button */
+  .watchlist {
+    display: block;
+    margin-top: 10px; /* Adjust as needed */
+  }
